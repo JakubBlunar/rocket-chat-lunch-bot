@@ -1,0 +1,53 @@
+{
+  "name": "lunch-bot",
+  "version": "0.0.1",
+  "description": "Bot for checking daily menu in nearby restaurants",
+  "author": "Jakub Blunár <jakubblunar@gmail.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 12 <15"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=Development nodemon --watch \"src/**\" --ext \"ts,json\" --ignore \"src/**/*.spec.ts\" --exec \"ts-node src/main.ts\"",
+    "start": "cross-env NODE_ENV=Production node build/src/main.js",
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "@rocket.chat/sdk": "0.2.9-2",
+    "dotenv": "10.0.0",
+    "jsdom": "16.6.0",
+    "lodash": "4.17.21",
+    "moment": "2.29.1",
+    "node-fetch": "2.6.1",
+    "tslib": "2.2.0"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.23",
+    "@types/jsdom": "16.2.10",
+    "@types/lodash": "4.14.170",
+    "@types/node": "15.6.2",
+    "@types/node-fetch": "2.5.10",
+    "@typescript-eslint/eslint-plugin": "4.26.0",
+    "@typescript-eslint/parser": "4.26.0",
+    "cross-env": "7.0.3",
+    "eslint": "7.27.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-jest": "24.3.6",
+    "jest": "27.0.3",
+    "nodemon": "2.0.7",
+    "prettier": "2.3.0",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.2",
+    "ts-node": "10.0.0",
+    "tsutils": "3.21.0",
+    "typescript": "4.3.2"
+  },
+  "volta": {
+    "node": "14.16.1"
+  }
+}
